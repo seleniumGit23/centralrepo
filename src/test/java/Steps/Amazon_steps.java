@@ -30,7 +30,7 @@ public class Amazon_steps {
 //        amazon.webdriverImplicitWait(3); //implicitely wait
 //        amazon.webdriverExplicitwait();
         amazon.clickonEletronics();
-        amazon.webdriverImplicitWait(3);
+//        amazon.webdriverImplicitWait(3);
     }
     @Then("I should see the Electronic items on page")
     public void i_should_see_the_electronic_items_on_page() throws Exception{
