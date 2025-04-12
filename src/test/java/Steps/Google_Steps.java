@@ -1,5 +1,6 @@
 package Steps;
 
+import Pages.Google;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -40,4 +41,39 @@ public class Google_Steps {
     }
 
 
+    @Given("Launch the google website")
+    public void launchTheGoogleWebsite() {
+
+        driver.get("https://www.google.com");
+    }
+
+    @Then("Verfiy the search box is displayed")
+    public void verfiyTheSearchBoxIsDisplayed() {
+        Google google=new Google(driver);
+        google.verifysearchbox();
+
+    }
+
+    @Given("Launch the {string} url")
+    public void launchTheUrl(String url) {
+        driver.get(url);
+    }
+
+    @When("User select the {string} country")
+    public void userSelectTheCountry(String countryname) {
+        Google google=new Google(driver);
+        google.selectCountry(countryname);
+
+    }
+
+    @Then("Verify user is selcted {string} country")
+    public void verifyUserIsSelctedCountry(String expectedcountryname) {
+        Google google=new Google(driver);
+        String actualslectedcountry=google.fetchSelectedCountry();
+        if(expectedcountryname.equals(actualslectedcountry)){
+            System.out.println("Expected and actual values are matched");
+        }else{
+            System.out.println("Expected and actual values are NOT matched");
+        }
+    }
 }

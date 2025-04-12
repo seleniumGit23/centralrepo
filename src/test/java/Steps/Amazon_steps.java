@@ -16,7 +16,7 @@ public class Amazon_steps {
 
     public Amazon_steps(WebDriverHooks webDriverHooks) {
         this.driver = webDriverHooks.getDriver();
-        this.scenario =webDriverHooks.getScenario();
+//        this.scenario =webDriverHooks.getScenario();
     }
 
     @Given("I launch the Amazon web page")

@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class Amazon {
@@ -51,12 +52,12 @@ public class Amazon {
     }
 
     public void webdriverImplicitWait(int TimeOut){
-        driver.manage().timeouts().implicitlyWait(TimeOut, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
     }
 
     public void webdriverExplicitwait(By loc){
-        WebDriverWait wait=new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(loc));
+        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));//create an object and get control to the driver object
+        wait.until(ExpectedConditions.visibilityOfElementLocated(loc));//
     }
 
 }

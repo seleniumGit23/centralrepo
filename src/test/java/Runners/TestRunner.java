@@ -12,9 +12,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 @CucumberOptions(features="src/test/resources/FeatureFile", glue ={"Steps"},publish = true,
         plugin = {"pretty","html:target/Report1.html", "json:target/json-report/cucumber.json" ,"junit:target/junit-report"},
 //dryRun =true,
-tags ="@Amazon"
+tags ="@Google_select"
 //name =  "test"
 )
 public class TestRunner {
-
+//empty
 }

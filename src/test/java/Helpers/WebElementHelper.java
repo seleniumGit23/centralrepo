@@ -7,6 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class WebElementHelper {
     WebDriver driver;
@@ -41,4 +46,12 @@ public class WebElementHelper {
 //        System.setProperty("wedriver.gecko.driver","C:\\Automation\\Drivers\\firefox.exe")
         driver = new ChromeDriver();
     }
+
+    public void implicitwait(){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));//this is for all elements in page after page load
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(3));//this is page level
+    }
+
+    WebElement element=new WebDriverWait(driver,Duration.ofSeconds(2)).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//locator"))));
+
 }
